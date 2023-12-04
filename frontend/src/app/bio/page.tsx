@@ -3,16 +3,16 @@ import {
   Heading,
   Text,
   Flex,
-  Link,
   Button,
   Image as ChakraImage,
   Spacer,
   Stack,
   HStack,
-  VStack,
 } from "@chakra-ui/react";
 import ProfilePicture from "./profile-picture";
 import SocialIcon from "./social-media-icon";
+import KYDLabsFooter from "./kyd-labs-footer";
+import KYDLabsCardFooter from "./kyd-labs-card-footer";
 
 export default function Bio() {
   return (
@@ -92,84 +92,13 @@ export default function Bio() {
                   </Text>
                 </Box>
               </HStack>
-              <Button
-                display={["none", "block"]}
-                color="black"
-                background="transparent"
-                borderColor={"black"}
-                borderWidth={1}
-                rounded="lg"
-                fontWeight="medium"
-              >
-                Get Tickets
-              </Button>
+              <Button variant={"outline"} display={["none", "block"]}>Get Tickets</Button>
             </HStack>
           </Box>
-
-          <HStack
-            display={["none", "flex"]}
-            bg="gray.200"
-            borderWidth={1}
-            borderColor={"gray.300"}
-            borderBottomLeftRadius={"xl"}
-            borderBottomRightRadius={"xl"}
-            p={4}
-            justifyContent={"space-between"}
-          >
-            <HStack>
-              <ChakraImage maxW={"60px"} src="assets/kydlabs-black.png" />
-              <Spacer />
-              <Spacer />
-              <Link fontSize={"small"}>Terms of Service</Link>
-              <Spacer />
-              <Link fontSize={"small"}>Privacy Policy</Link>
-              <Spacer />
-              <Link fontSize={"small"}>Create your own page</Link>
-            </HStack>
-            <VStack alignItems={"flex-end"}>
-              <Text fontSize={"small"} suppressHydrationWarning>
-                {`© `}
-                {new Date().getFullYear()} KYD Labs Inc.
-              </Text>
-              <Text fontSize={"small"} color="gray.500" align={"right"}>
-                1.9.7
-              </Text>
-            </VStack>
-          </HStack>
+          <KYDLabsCardFooter />
         </Box>
       </Box>
-      <VStack
-        mt={5}
-        display={["flex", "none"]}
-        p={4}
-        justifyContent={"space-between"}
-      >
-        <ChakraImage maxW={"75px"} src="assets/kydlabs.png" />
-        <HStack>
-          <Link color="white" fontSize={"small"}>
-            Terms of Service
-          </Link>
-          <Spacer />
-          <Link color="white" fontSize={"small"}>
-            Privacy Policy
-          </Link>
-          <Spacer />
-        </HStack>
-        <Link color="white" fontSize={"small"}>
-          Create your own page
-        </Link>
-        <Spacer />
-        <Text
-          fontSize={"small"}
-          color="white"
-          align={"right"}
-          opacity={0.8}
-          suppressHydrationWarning
-        >
-          {`© `}
-          {new Date().getFullYear()} KYD Labs Inc. 1.9.7
-        </Text>
-      </VStack>
+      <KYDLabsFooter />
     </Box>
   );
 }
