@@ -1,4 +1,3 @@
-import Head from "next/head";
 import {
   Box,
   Heading,
@@ -81,20 +80,15 @@ export default function Bio() {
                   src="https://content.kydlabs.com/organizations/OR7d2f5145-99a6-44b6-b7aa-2b93fb9896ee/ac880241-1d0e-4d56-b36a-1b3aab8c74b2.png"
                   borderRadius={"lg"}
                 />
-                <Box>
-                  <Text justifyContent={"space-between"}>
-                    <Heading fontSize="lg" fontWeight="semibold">
-                      No Filter NYE
-                    </Heading>
-                    <Text color="blue" fontSize="sm" fontWeight={"medium"}>
-                      Sun Dec 31 9:00PM
-                    </Text>
-                    <Text color="gray.800" fontSize="sm">
-                      Lot 45 Bushwick{" "}
-                      <Text fontWeight={"bold"} display={"inline"}>
-                        New York
-                      </Text>
-                    </Text>
+                <Box justifyContent={"space-between"}>
+                  <Heading fontSize="lg" fontWeight="semibold">
+                    No Filter NYE
+                  </Heading>
+                  <Text color="blue" fontSize="sm" fontWeight={"medium"}>
+                    Sun Dec 31 9:00PM
+                  </Text>
+                  <Text color="gray.800" fontSize="sm">
+                    Lot 45 Bushwick New York
                   </Text>
                 </Box>
               </HStack>
@@ -104,8 +98,6 @@ export default function Bio() {
                 background="transparent"
                 borderColor={"black"}
                 borderWidth={1}
-                px={6}
-                py={6}
                 rounded="lg"
                 fontWeight="medium"
               >
