@@ -1,6 +1,6 @@
-import { DocumentClient } from "aws-sdk/clients/dynamodb";
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 
-const dynamo = new DocumentClient();
+const dynamo = new DynamoDBClient();
 
 export default class BioService {
   fetchBio = async () => {

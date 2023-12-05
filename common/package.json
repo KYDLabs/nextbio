@@ -9,8 +9,8 @@
     "node": ">=18.19.0"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.465.0",
     "@types/uuid": "^9.0.4",
-    "aws-sdk": "^2.1147.0",
     "dayjs": "^1.11.4",
     "uuid": "^8.3.2"
   },
