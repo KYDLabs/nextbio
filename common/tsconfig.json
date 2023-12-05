@@ -14,9 +14,11 @@
         "composite": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true
     },
     "include": [
         "*.ts",
+        "*.json"
     ],
     "exclude": [
         "node_modules/**/*",

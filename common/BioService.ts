@@ -1,29 +1,49 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import data from "./mock_data.json";
 
 const dynamo = new DynamoDBClient();
 
 export default class BioService {
-  fetchBio = async () => {
-    return {
-      events: [
-        {
-          id: "EV3dcd3687-fb03-4369-8fd8-cad2627c39a4",
-          name: "Event 1",
-          start_at: "2024-01-01T02:00:00.000Z",
-          display_start_at: "Sun Dec 31 9:00PM",
-          timezone: "America/New_York",
-          artist: "Artist1",
-          image:
-            "https://kydlabs.imgix.net/a/EV3dcd3687-fb03-4369-8fd8-cad2627c39a4/bd060000-ad3d-42f4-b172-e3330dc12bdf.png?auto=format,compress&q=40&h=1080",
-          venue: {
-            name: "Lot 45 Bushwick",
-            city: "New York",
-            lat: 40.7038,
-            long: -73.922,
-          },
-          distance: 0.1,
-        },
-      ],
-    };
+  private calcuteDistanceBetweenLatLong = (
+    lat1: number,
+    long1: number,
+    lat2: number,
+    long2: number
+  ) => {
+    const R = 6371; // Radius of the earth in km
+    const dLat = this.deg2rad(lat2 - lat1); // deg2rad below
+    const dLon = this.deg2rad(long2 - long1);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(this.deg2rad(lat1)) *
+        Math.cos(this.deg2rad(lat2)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const d = R * c; // Distance in km
+    return d;
+  };
+
+  private deg2rad = (deg: number) => {
+    return deg * (Math.PI / 180);
+  };
+
+  fetchBio = async (
+    artist_name: string,
+    params?: { latitude: string; longitude: string }
+  ) => {
+    data.response.events.forEach((event) => {
+      event.distance =
+        params && params.latitude && params.longitude
+          ? this.calcuteDistanceBetweenLatLong(
+              parseFloat(params?.latitude),
+              parseFloat(params?.longitude),
+              event.venue.lat,
+              event.venue.long
+            )
+          : 0;
+    });
+
+    return data.response;
   };
 }

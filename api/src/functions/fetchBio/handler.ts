@@ -11,7 +11,9 @@ const handler: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
 ) => {
   console.log("Event: ", JSON.stringify(event, null, 2));
   try {
-    const result = await service.fetchBio();
+    const { queryStringParameters = {} } = event;
+    const { latitude, longitude } = queryStringParameters;
+    const result = await service.fetchBio("default", { latitude, longitude });
     return formatJSONResponse(result, event);
   } catch (err) {
     console.error(err);
