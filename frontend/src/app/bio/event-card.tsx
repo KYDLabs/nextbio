@@ -7,7 +7,7 @@ import {
   Button,
   Link,
 } from "@chakra-ui/react";
-import { Event } from "./types";
+import { BioEvent } from "./types";
 import Image from "@/components/Image";
 import { eventDateFormat } from "@/util/date";
 
@@ -27,7 +27,7 @@ const EventCard = ({
   thumbnail: string;
   timezone: string;
   date: Date;
-  venue: Event["venue"];
+  venue: BioEvent["venue"];
   onCTA?: (event: React.MouseEvent<HTMLElement>, ...args: any[]) => void;
 }) => {
   return (

@@ -12,6 +12,9 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    externalDir: true
+  }
 };
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
