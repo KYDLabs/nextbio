@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { authenticated } from "./api";
-import { BioEvent } from "@/app/bio/types";
+import { BioEvent } from "@/types";
 import config from "@/util/config";
 
 export function useArtistEvents(_artistId: string) {

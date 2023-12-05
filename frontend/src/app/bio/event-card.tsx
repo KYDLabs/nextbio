@@ -7,7 +7,7 @@ import {
   Button,
   Link,
 } from "@chakra-ui/react";
-import { BioEvent } from "./types";
+import { BioEvent } from "../../types";
 import Image from "@/components/Image";
 import { eventDateFormat } from "@/util/date";
 

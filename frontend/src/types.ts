@@ -1,6 +1,6 @@
-export type { BioEvent } from "../../../../common/Interfaces";
+export type { BioEvent } from "../../common/Interfaces";
+// https://github.com/vercel/next.js/discussions/26420
 
-// TODO: shared interfaces
 export type Response<ResponseType> = {
   success: boolean;
   response: ResponseType;
