@@ -1,4 +1,5 @@
 "use client";
+// Might be a future limitation to get the most out of next.js https://chakra-ui.com/getting-started/nextjs-guide#app-directory-setup
 
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider } from "@chakra-ui/react";

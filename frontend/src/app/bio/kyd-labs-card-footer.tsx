@@ -1,4 +1,12 @@
-import { HStack, Link, Spacer, Text, VStack, Image as ChakraImage } from "@chakra-ui/react";
+import Image from "@/components/Image";
+import {
+  HStack,
+  Link,
+  Spacer,
+  Text,
+  VStack,
+  Image as ChakraImage,
+} from "@chakra-ui/react";
 
 const KYDLabsCardFooter = () => {
   return (
@@ -13,7 +21,13 @@ const KYDLabsCardFooter = () => {
       justifyContent={"space-between"}
     >
       <HStack>
-        <ChakraImage maxW={"60px"} src="assets/kydlabs-black.png" />
+        <Image
+          alt="KYD labs logo"
+          width={60}
+          height={45}
+          maxW={"60px"}
+          src="/assets/kydlabs-black.png"
+        />
         <Spacer />
         <Spacer />
         <Link fontSize={"small"}>Terms of Service</Link>

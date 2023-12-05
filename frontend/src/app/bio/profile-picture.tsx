@@ -1,4 +1,5 @@
-import { Image as ChakraImage, Box, StyleProps } from "@chakra-ui/react";
+import Image from "@/components/Image";
+import { Box, StyleProps } from "@chakra-ui/react";
 
 const ProfilePicture = ({
   src,
@@ -10,7 +11,9 @@ const ProfilePicture = ({
 } & StyleProps) => {
   return (
     <Box pos="relative" {...rest}>
-      <ChakraImage
+      <Image
+        width={300}
+        height={300}
         w={[200, 300]}
         minW={[200, 300]}
         h={[200, 300]}
@@ -19,6 +22,8 @@ const ProfilePicture = ({
         src={src}
         alt={alt}
         objectFit="cover"
+        priority 
+        loading="eager"
         className="rounded-lg shadow-lg"
       />
       <Box
@@ -31,7 +36,13 @@ const ProfilePicture = ({
         borderBottomRightRadius={"xl"}
         background={"black"}
       >
-        <ChakraImage maxW={["40px", "50px"]} src="assets/kydlabs.png" />
+        <Image
+          alt="KYD labs logo"
+          width={50}
+          height={25}
+          maxW={["40px", "50px"]}
+          src="/assets/kydlabs.png"
+        />
       </Box>
     </Box>
   );

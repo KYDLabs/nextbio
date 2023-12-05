@@ -12,9 +12,17 @@ const outline = defineStyle({
   border: "1px solid", // change the appearance of the border
   rounded: "lg",
   color: "black",
-  borderColor: 'black',
+  borderColor: "black",
   background: "transparent",
   fontWeight: "medium", // change the font weight
+});
+
+export const linkTheme = defineStyleConfig({
+  baseStyle: {
+    _hover: {
+      textDecoration: "none",
+    },
+  },
 });
 
 export const buttonTheme = defineStyleConfig({
@@ -25,5 +33,6 @@ export const theme = extendTheme({
   colors,
   components: {
     Button: buttonTheme,
+    Link: linkTheme,
   },
 });

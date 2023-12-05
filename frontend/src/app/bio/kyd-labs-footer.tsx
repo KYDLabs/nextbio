@@ -1,3 +1,4 @@
+import Image from "@/components/Image";
 import {
   VStack,
   Image as ChakraImage,
@@ -15,7 +16,13 @@ const KYDLabsFooter = () => {
       p={4}
       justifyContent={"space-between"}
     >
-      <ChakraImage maxW={"75px"} src="assets/kydlabs.png" />
+      <Image
+        alt="KYD labs log"
+        width={75}
+        height={37}
+        maxW={"75px"}
+        src="/assets/kydlabs.png"
+      />
       <HStack>
         <Link href="" color="white" fontSize={"small"}>
           Terms of Service
