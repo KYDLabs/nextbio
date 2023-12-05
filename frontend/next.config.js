@@ -13,12 +13,21 @@ const nextConfig = {
     ],
   },
   experimental: {
-    externalDir: true
-  }
+    externalDir: true,
+  },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/bio",
+        permanent: true,
+      },
+    ];
+  },
 };
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
 
-module.exports = withBundleAnalyzer(nextConfig)
+module.exports = withBundleAnalyzer(nextConfig);
