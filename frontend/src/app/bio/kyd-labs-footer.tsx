@@ -1,11 +1,6 @@
 import Image from "@/components/Image";
-import {
-  VStack,
-  Spacer,
-  Text,
-  HStack,
-  Link,
-} from "@chakra-ui/react";
+import config from "@/util/config";
+import { VStack, Spacer, Text, HStack, Link } from "@chakra-ui/react";
 
 const KYDLabsFooter = () => {
   return (
@@ -23,16 +18,28 @@ const KYDLabsFooter = () => {
         src="/assets/kydlabs.png"
       />
       <HStack>
-        <Link href="" color="white" fontSize={"small"}>
+        <Link
+          href={config.externalLinks.termsAndConditions}
+          color="white"
+          fontSize={"small"}
+        >
           Terms of Service
         </Link>
         <Spacer />
-        <Link href="" color="white" fontSize={"small"}>
+        <Link
+          href={config.externalLinks.privacyPolicy}
+          color="white"
+          fontSize={"small"}
+        >
           Privacy Policy
         </Link>
         <Spacer />
       </HStack>
-      <Link href="" color="white" fontSize={"small"}>
+      <Link
+        href={config.externalLinks.requestAccess}
+        color="white"
+        fontSize={"small"}
+      >
         Create your own page
       </Link>
       <Spacer />

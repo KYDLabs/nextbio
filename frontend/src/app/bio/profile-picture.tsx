@@ -14,6 +14,7 @@ const ProfilePicture = ({
       <Image
         width={300}
         height={300}
+        sizes="(max-width: 600px) 200px, 300px"
         w={[200, 300]}
         minW={[200, 300]}
         h={[200, 300]}

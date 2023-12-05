@@ -1,11 +1,6 @@
 import Image from "@/components/Image";
-import {
-  HStack,
-  Link,
-  Spacer,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import config from "@/util/config";
+import { HStack, Link, Spacer, Text, VStack } from "@chakra-ui/react";
 
 const KYDLabsCardFooter = () => {
   return (
@@ -29,11 +24,29 @@ const KYDLabsCardFooter = () => {
         />
         <Spacer />
         <Spacer />
-        <Link fontSize={"small"}>Terms of Service</Link>
+        <Link
+          isExternal
+          href={config.externalLinks.termsAndConditions}
+          fontSize={"small"}
+        >
+          Terms of Service
+        </Link>
         <Spacer />
-        <Link fontSize={"small"}>Privacy Policy</Link>
+        <Link
+          isExternal
+          href={config.externalLinks.privacyPolicy}
+          fontSize={"small"}
+        >
+          Privacy Policy
+        </Link>
         <Spacer />
-        <Link fontSize={"small"}>Create your own page</Link>
+        <Link
+          isExternal
+          href={config.externalLinks.requestAccess}
+          fontSize={"small"}
+        >
+          Create your own page
+        </Link>
       </HStack>
       <VStack alignItems={"flex-end"}>
         <Text fontSize={"small"} suppressHydrationWarning>
