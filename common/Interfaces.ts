@@ -2,6 +2,7 @@ export interface BioEvent {
   id: string;
   name: string;
   artist: string;
+  image: string;
   start_at: string;
   display_start_at: string;
   timezone: string;
