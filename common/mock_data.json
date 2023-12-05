@@ -13,8 +13,8 @@
         "venue": {
           "name": "Lot 45 Bushwick",
           "city": "New York",
-          "lat": 40.7038,
-          "long": -73.922
+          "latitude": 40.7038,
+          "longitude": -73.922
         },
         "distance": 0.1
       },
@@ -29,8 +29,8 @@
         "venue": {
           "name": "The Roxy",
           "city": "Los Angeles",
-          "lat": 34.0522,
-          "long": -118.2437
+          "latitude": 34.0522,
+          "longitude": -118.2437
         },
         "distance": 0.5
       },
@@ -45,8 +45,8 @@
         "venue": {
           "name": "Royal Albert Hall",
           "city": "London",
-          "lat": 51.5002,
-          "long": -0.1774
+          "latitude": 51.5002,
+          "longitude": -0.1774
         },
         "distance": 0.3
       },
@@ -61,8 +61,8 @@
         "venue": {
           "name": "Tokyo Dome",
           "city": "Tokyo",
-          "lat": 35.7056,
-          "long": 139.7514
+          "latitude": 35.7056,
+          "longitude": 139.7514
         },
         "distance": 0.8
       },
@@ -77,8 +77,8 @@
         "venue": {
           "name": "United Center",
           "city": "Chicago",
-          "lat": 41.8807,
-          "long": -87.6742
+          "latitude": 41.8807,
+          "longitude": -87.6742
         },
         "distance": 0.4
       }

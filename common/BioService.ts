@@ -38,8 +38,8 @@ export default class BioService {
           ? this.calcuteDistanceBetweenLatLong(
               parseFloat(params?.latitude),
               parseFloat(params?.longitude),
-              event.venue.lat,
-              event.venue.long
+              event.venue.latitude,
+              event.venue.longitude
             )
           : 0;
     });
