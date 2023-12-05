@@ -15,7 +15,7 @@ export default function Bio() {
   const bio = useBio();
   const { data: geolocationData } = useGeolocation()
   const { data, error, isLoading } = useArtistEvents(bio.id, geolocationData);
-  const hasEvents = data?.events.length
+  const hasEvents = !isLoading && data?.events.length
 
   return (
     <>
