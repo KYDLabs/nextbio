@@ -1,21 +1,25 @@
 "use client";
 
-import { Box, Heading, Stack, Skeleton, useToast } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Stack,
+  Skeleton,
+  useToast,
+  VStack,
+} from "@chakra-ui/react";
 import ProfilePicture from "./profile-picture";
-import KYDLabsFooter from "./kyd-labs-footer";
 import KYDLabsCardFooter from "./kyd-labs-card-footer";
 import ArtistHeader from "./artist-header";
-import EventCard from "./event-card";
 import { useArtistEvents, useBio, useGeolocation } from "@/client/hooks";
 import Image from "@/components/Image";
-import useSWR from "swr";
+import EventsList from "./events-list";
 
 export default function Bio() {
   const toast = useToast();
   const bio = useBio();
-  const { data: geolocationData } = useGeolocation()
+  const { data: geolocationData } = useGeolocation();
   const { data, error, isLoading } = useArtistEvents(bio.id, geolocationData);
-  const hasEvents = !isLoading && data?.events.length
 
   return (
     <>
@@ -54,42 +58,24 @@ export default function Bio() {
             >
               Upcoming Events
             </Heading>
-            <Skeleton height="100" isLoaded={!isLoading}>
-              {hasEvents ? (
-                data.events.map((event) => {
-                  return (
-                    <EventCard
-                      href={`/bio/${event.id}`}
-                      venue={event.venue}
-                      key={event.id}
-                      thumbnail={event.image}
-                      name={event.name}
-                      date={new Date(event.start_at)}
-                      timezone={event.timezone}
-                      eventId={event.id}
-                      onCTA={() => {
-                        toast({
-                          title: "Tickets bought!",
-                          description: `You just bought 2 tickets for ${event.artist}`,
-                          status: "success",
-                          isClosable: true,
-                          duration: 9000,
-                        });
-                      }}
-                    />
-                  );
-                })
-              ) : (
-                <Heading size="small">
-                  No upcoming events for this artist
-                </Heading>
-              )}
-            </Skeleton>
+              <EventsList
+                isLoading={isLoading}
+                seeMoreSize={3}
+                events={data?.events}
+                onCTAClick={(_, event) => {
+                  toast({
+                    title: "Tickets bought!",
+                    description: `You just bought 2 tickets for ${event.artist}`,
+                    status: "success",
+                    isClosable: true,
+                    duration: 9000,
+                  });
+                }}
+              />
           </Box>
           <KYDLabsCardFooter />
         </Box>
       </Box>
-      <KYDLabsFooter />
     </>
   );
 }

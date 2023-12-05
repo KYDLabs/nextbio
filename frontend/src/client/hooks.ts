@@ -5,18 +5,15 @@ import config from "@/util/config";
 import { Geo } from "@vercel/edge";
 
 export function useArtistEvents(_artistId: string, geolocationData?: Geo) {
-  const hasCoordinates = Boolean(geolocationData && geolocationData.latitude && geolocationData.longitude);
-
   const usp = new URLSearchParams();
   usp.append("latitude", geolocationData?.latitude || "");
   usp.append("longitude", geolocationData?.longitude || "");
 
   const { data, error, isLoading } = useSWR<{
     events: BioEvent[];
-  }>(
-    hasCoordinates ? `${config.apiUrl}/bio?${usp.toString()}` : null,
-    authenticated
-  );
+  }>(`${config.apiUrl}/bio?${usp.toString()}`, authenticated, {
+    fallbackData: { events: [] },
+  });
 
   return {
     data: data,
@@ -38,10 +35,7 @@ export const useBio = () => {
 };
 
 export const useGeolocation = () => {
-  const { data, error, isLoading } = useSWR<Geo>(
-    `/api/geolocation`,
-    apiRoutes
-  );
+  const { data, error, isLoading } = useSWR<Geo>(`/api/geolocation`, apiRoutes);
 
   return {
     data,

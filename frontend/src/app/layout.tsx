@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
 import { Box } from "@chakra-ui/react";
+import KYDLabsFooter from "@/components/kyd-labs-footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,9 +26,11 @@ export default function RootLayout({
             backgroundImage={
               "linear-gradient(322.9deg, rgb(139, 139, 139) -32.49%, rgb(0, 0, 0) 30.1%, rgb(51, 46, 56) 97.31%)"
             }
-            height={"100vh"}
+            height={"100%"}
+            minH={"100vh"}
           >
             {children}
+            <KYDLabsFooter />
           </Box>
         </Providers>
       </body>

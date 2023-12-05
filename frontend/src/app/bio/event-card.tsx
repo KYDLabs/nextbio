@@ -20,19 +20,30 @@ const EventCard = ({
   timezone,
   onCTA = () => {},
   href,
+  highlight,
 }: {
   name: string;
   eventId: string;
   href?: string;
   thumbnail: string;
   timezone: string;
+  highlight: boolean,
   date: Date;
   venue: BioEvent["venue"];
   onCTA?: (event: React.MouseEvent<HTMLElement>, ...args: any[]) => void;
 }) => {
   return (
-    <Link href={href}>
-      <HStack bg="white" width={"full"} justify={"space-between"} px={[2, 4]}>
+    <Link
+      href={href}
+      width={"full"}
+      boxShadow={highlight ? "rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;" : ''}
+      py={[3, 4]}
+      mb={highlight ? 4 : 0}
+      borderRadius={highlight ? 'xl' : ''}
+      borderBottomWidth={1}
+      borderBottomColor={"gray.200"}
+    >
+      <HStack width={"full"} justify={"space-between"} px={[2, 4]}>
         <HStack>
           <Image
             alt={`${name} picture`}
