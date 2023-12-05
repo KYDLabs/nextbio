@@ -6,20 +6,8 @@ import KYDLabsFooter from "./kyd-labs-footer";
 import KYDLabsCardFooter from "./kyd-labs-card-footer";
 import ArtistHeader from "./artist-header";
 import EventCard from "./event-card";
-import { useArtistEvents } from "@/client/hooks";
+import { useArtistEvents, useBio } from "@/client/hooks";
 import Image from "@/components/Image";
-
-// To mock the bio of the artist
-const useBio = () => {
-  return {
-    artist: "Artist 1",
-    id: "mock-artist-id",
-    logo: "https://content.kydlabs.com/organizations/djmikenasty/logo.png",
-    fanbase: { verified: 200000 },
-    image:
-      "https://content.kydlabs.com/organizations/OR7d2f5145-99a6-44b6-b7aa-2b93fb9896ee/ac880241-1d0e-4d56-b36a-1b3aab8c74b2.png",
-  };
-};
 
 export default function Bio() {
   const bio = useBio();

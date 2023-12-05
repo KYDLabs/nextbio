@@ -5,7 +5,6 @@ import {
   Spacer,
   Text,
   VStack,
-  Image as ChakraImage,
 } from "@chakra-ui/react";
 
 const KYDLabsCardFooter = () => {

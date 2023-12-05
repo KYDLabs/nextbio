@@ -1,7 +1,6 @@
 import Image from "@/components/Image";
 import {
   VStack,
-  Image as ChakraImage,
   Spacer,
   Text,
   HStack,

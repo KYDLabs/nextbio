@@ -1,8 +1,6 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import SocialIcon from "./social-media-icon";
-
-const formatFanNumber = (fanNumber: number) =>
-  new Intl.NumberFormat("en-US", { notation: "compact" }).format(fanNumber);
+import { formatFanNumber } from "@/util/date";
 
 const ArtistHeader = ({
   name,

@@ -9,3 +9,6 @@ export const eventDateFormat = (date: Date, tz: string = "America/New_York") =>
     hour12: true,
     timeZone: tz,
   }).format(date);
+
+export const formatFanNumber = (fanNumber: number) =>
+  new Intl.NumberFormat("en-US", { notation: "compact" }).format(fanNumber);
