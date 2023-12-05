@@ -1,0 +1,87 @@
+{
+  "success": true,
+  "response": {
+    "events": [
+      {
+        "id": "EV3dcd3687-fb03-4369-8fd8-cad2627c39a4",
+        "name": "Event 1",
+        "start_at": "2024-01-01T02:00:00.000Z",
+        "display_start_at": "Sun Dec 31 9:00PM",
+        "timezone": "America/New_York",
+        "artist": "Artist1",
+        "image": "https://kydlabs.imgix.net/a/EV3dcd3687-fb03-4369-8fd8-cad2627c39a4/bd060000-ad3d-42f4-b172-e3330dc12bdf.png?auto=format,compress&q=40&h=1080",
+        "venue": {
+          "name": "Lot 45 Bushwick",
+          "city": "New York",
+          "latitude": 40.7038,
+          "longitude": -73.922
+        },
+        "distance": 0.1
+      },
+      {
+        "id": "EV2a5f846f-9a49-4c15-85d5-af7bfa44dcbc",
+        "name": "Event 2",
+        "start_at": "2024-02-15T20:30:00.000Z",
+        "display_start_at": "Fri Feb 15 3:30PM",
+        "timezone": "America/Los_Angeles",
+        "artist": "Artist1",
+        "image": "https://kydlabs.imgix.net/a/EV3dcd3687-fb03-4369-8fd8-cad2627c39a4/bd060000-ad3d-42f4-b172-e3330dc12bdf.png?auto=format,compress&q=40&h=1080",
+        "venue": {
+          "name": "The Roxy",
+          "city": "Los Angeles",
+          "latitude": 34.0522,
+          "longitude": -118.2437
+        },
+        "distance": 0.5
+      },
+      {
+        "id": "EV1b2b9c46-589e-4be5-a5a6-6d4e9251a4d1",
+        "name": "Event 3",
+        "start_at": "2024-03-20T19:00:00.000Z",
+        "display_start_at": "Thu Mar 20 2:00PM",
+        "timezone": "Europe/London",
+        "artist": "Artist1",
+        "image": "https://kydlabs.imgix.net/a/EV3dcd3687-fb03-4369-8fd8-cad2627c39a4/bd060000-ad3d-42f4-b172-e3330dc12bdf.png?auto=format,compress&q=40&h=1080",
+        "venue": {
+          "name": "Royal Albert Hall",
+          "city": "London",
+          "latitude": 51.5002,
+          "longitude": -0.1774
+        },
+        "distance": 0.3
+      },
+      {
+        "id": "EV0f7a2de1-2437-4e88-925a-7030e42a994f",
+        "name": "Event 4",
+        "start_at": "2024-04-10T21:45:00.000Z",
+        "display_start_at": "Sat Apr 10 4:45PM",
+        "timezone": "Asia/Tokyo",
+        "artist": "Artist1",
+        "image": "https://kydlabs.imgix.net/a/EV3dcd3687-fb03-4369-8fd8-cad2627c39a4/bd060000-ad3d-42f4-b172-e3330dc12bdf.png?auto=format,compress&q=40&h=1080",
+        "venue": {
+          "name": "Tokyo Dome",
+          "city": "Tokyo",
+          "latitude": 35.7056,
+          "longitude": 139.7514
+        },
+        "distance": 0.8
+      },
+      {
+        "id": "EV4c982513-76e1-4c73-938a-2a3ccfc8a73e",
+        "name": "Event 5",
+        "start_at": "2024-05-25T18:30:00.000Z",
+        "display_start_at": "Sun May 25 1:30PM",
+        "timezone": "America/Chicago",
+        "artist": "Artist1",
+        "image": "https://kydlabs.imgix.net/a/EV3dcd3687-fb03-4369-8fd8-cad2627c39a4/bd060000-ad3d-42f4-b172-e3330dc12bdf.png?auto=format,compress&q=40&h=1080",
+        "venue": {
+          "name": "United Center",
+          "city": "Chicago",
+          "latitude": 41.8807,
+          "longitude": -87.6742
+        },
+        "distance": 0.4
+      }
+    ]
+  }
+}

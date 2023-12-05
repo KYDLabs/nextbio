@@ -13,6 +13,6 @@ export interface BioEvent {
 export interface BioVenue {
   name: string;
   city: string;
-  lat: number;
-  long: number;
+  latitude: number;
+  longitude: number;
 }
