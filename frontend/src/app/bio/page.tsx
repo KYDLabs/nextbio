@@ -6,15 +6,16 @@ import KYDLabsFooter from "./kyd-labs-footer";
 import KYDLabsCardFooter from "./kyd-labs-card-footer";
 import ArtistHeader from "./artist-header";
 import EventCard from "./event-card";
-import { useArtistEvents, useBio } from "@/client/hooks";
+import { useArtistEvents, useBio, useGeolocation } from "@/client/hooks";
 import Image from "@/components/Image";
+import useSWR from "swr";
 
 export default function Bio() {
-  const bio = useBio();
-  const { data, error, isLoading } = useArtistEvents(bio.id);
-  const hasEvents = data?.events.length
-
   const toast = useToast();
+  const bio = useBio();
+  const { data: geolocationData } = useGeolocation()
+  const { data, error, isLoading } = useArtistEvents(bio.id, geolocationData);
+  const hasEvents = data?.events.length
 
   return (
     <>

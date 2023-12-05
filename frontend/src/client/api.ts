@@ -16,3 +16,8 @@ export const authenticated = async (...args: any[]) => {
     throw new Error(result);
   }
 };
+
+export const apiRoutes = async (...args: any[]) => {
+  //@ts-ignore
+  return fetch(...args, {}).then((res) => res.json());
+};

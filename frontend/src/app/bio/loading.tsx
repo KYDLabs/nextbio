@@ -3,7 +3,7 @@ import { Center, Spinner, VStack } from "@chakra-ui/react";
 
 export default function Loading() {
   return (
-    <Center>
+    <Center height="100vh" flexDirection={"column"}>
       <VStack>
         <Image
           alt="KYD labs logo"
@@ -11,7 +11,7 @@ export default function Loading() {
           height={50}
           src="/assets/kydlabs.png"
         />
-        <Spinner />
+        <Spinner color="white" />
       </VStack>
     </Center>
   );

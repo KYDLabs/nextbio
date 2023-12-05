@@ -13,13 +13,14 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@next/bundle-analyzer": "^14.0.3",
+    "@vercel/edge": "^1.1.1",
     "framer-motion": "^10.16.12",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
     "serverless": "^3.38.0",
-    "swr": "^2.2.4",
-    "@next/bundle-analyzer": "^14.0.3"
+    "swr": "^2.2.4"
   },
   "devDependencies": {
     "@types/node": "^20",
