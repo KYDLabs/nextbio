@@ -22,8 +22,16 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 # To analyze bundle size
 
-```
+```bash
 ANALYZE=true npm run build
 ```
 
 It should open a few browser pages with the generated reports
+
+# Run tests
+
+```bash
+npm run test
+```
+
+Then, choose the browser, and see cypress running

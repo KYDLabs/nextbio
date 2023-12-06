@@ -1,0 +1,22 @@
+name: End-to-end tests
+on: pull_request
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install OS dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 xvfb
+      - uses: cypress-io/github-action@v6
+        env:
+          CYPRESS_API_URL: https://auem6y9ubd.execute-api.us-east-1.amazonaws.com/prod
+          NEXT_PUBLIC_API_KEY: "<NEEDS TO BE ADDED VIA REPOSITORY > SECRETS>"
+          NEXT_PUBLIC_API_URL: "https://auem6y9ubd.execute-api.us-east-1.amazonaws.com/prod"
+        with:
+          command: npm run test:e2e:headless
+          working-directory: frontend
+          browser: chrome
+          DEBUG: "cypress:*"
