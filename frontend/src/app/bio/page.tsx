@@ -11,15 +11,14 @@ import {
 import ProfilePicture from "./profile-picture";
 import KYDLabsCardFooter from "./kyd-labs-card-footer";
 import ArtistHeader from "./artist-header";
-import { useArtistEvents, useBio, useGeolocation } from "@/client/hooks";
+import { useArtistEvents, useBio } from "@/client/hooks";
 import Image from "@/components/Image";
 import EventsList from "./events-list";
 
 export default function Bio() {
   const toast = useToast();
   const bio = useBio();
-  const { data: geolocationData } = useGeolocation();
-  const { data, error, isLoading } = useArtistEvents(bio.id, geolocationData);
+  const { data, error, isLoading } = useArtistEvents(bio.id);
 
   return (
     <>
