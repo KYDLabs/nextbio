@@ -1,7 +1,7 @@
 import config from "@/util/config";
 
 // TODO: might be done better with a client like axios
-export const authenticated = async (...args: any[]) => {
+export const authenticated = async <DataType>(...args: any[]) => {
   //@ts-ignore
   const result = await fetch(...args, {
     headers: {
@@ -11,7 +11,7 @@ export const authenticated = async (...args: any[]) => {
   }).then((res) => res.json());
 
   if (result.success) {
-    return result.response;
+    return result.response as DataType;
   } else {
     throw new Error(result);
   }

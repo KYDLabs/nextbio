@@ -1,0 +1,37 @@
+name: End-to-end tests
+on:
+  pull_request:
+    paths:
+      - "frontend/**"
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          # working-directory: frontend
+      - run: npm install
+        working-directory: frontend
+      - run: npm run lint
+        working-directory: frontend
+  cypress-run:
+    needs: lint
+    runs-on: ubuntu-22.04
+    container:
+      image: cypress/browsers:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
+        env:
+          CYPRESS_API_URL: https://auem6y9ubd.execute-api.us-east-1.amazonaws.com/prod
+          NEXT_PUBLIC_API_URL: "https://auem6y9ubd.execute-api.us-east-1.amazonaws.com/prod"
+          NEXT_PUBLIC_API_KEY: ""
+        with:
+          command: npm run test:e2e:headless
+          working-directory: frontend
+          browser: chrome
+          DEBUG: "cypress:*"
