@@ -30,7 +30,7 @@ export default function Bio() {
             height={100}
             borderRadius={"xl"}
             src={bio.logo}
-            alt={bio.artist}
+            alt={`${bio.artist} logo`}
             objectFit="cover"
             className="rounded-lg shadow-lg"
           />
@@ -39,7 +39,7 @@ export default function Bio() {
           <ArtistHeader name={bio.artist} fanNumber={bio.fanbase.verified} />
           <ProfilePicture
             mb={["auto", "-40px"]}
-            alt={bio.artist}
+            alt={`${bio.artist} picture`}
             src={bio.image}
           />
         </Stack>

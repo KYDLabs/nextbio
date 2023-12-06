@@ -2,6 +2,7 @@ import { BioEvent } from "@/types";
 import { Box, Button, Heading, Skeleton, VStack } from "@chakra-ui/react";
 import EventCard from "./event-card";
 import { useState } from "react";
+import { kMaxLength } from "buffer";
 
 const MINIMUM_LIST_HEIGHT = 396 + 72;
 
@@ -21,6 +22,7 @@ const EventsList = ({
 }) => {
   const hasEvents = !isLoading && events?.length;
   const [isExpanded, setIsExpanded] = useState(false);
+  const showSeeMore = events && events.length > seeMoreSize;
 
   return (
     <Skeleton minH={MINIMUM_LIST_HEIGHT} isLoaded={!isLoading}>
@@ -44,9 +46,9 @@ const EventsList = ({
             ) : null;
           })
         ) : (
-          <Heading size="small">No upcoming events for this artist</Heading>
+          <Heading size="small">No upcoming events for this artist.</Heading>
         )}
-        <Button mt={4} onClick={() => setIsExpanded(!isExpanded)}>
+        <Button hidden={!showSeeMore} mt={4} onClick={() => setIsExpanded(!isExpanded)}>
           See {isExpanded ? "less" : "more"}
         </Button>
       </VStack>

@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress:open": "cypress open",
+    "test": "start-server-and-test start http://localhost:3000 cypress",
+    "e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
+    "component": "cypress open --component",
+    "component:headless": "cypress run --component"
   },
   "dependencies": {
     "@chakra-ui/next-js": "^2.2.0",
@@ -23,11 +29,14 @@
     "swr": "^2.2.4"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^10.0.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cypress": "^13.6.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
+    "start-server-and-test": "^2.0.3",
     "typescript": "^5"
   }
 }
