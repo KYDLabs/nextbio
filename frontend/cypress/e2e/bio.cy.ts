@@ -42,7 +42,7 @@ describe("Bio page", () => {
       });
 
       it("shows no events when theres no events", () => {
-        cy.intercept("GET", `${Cypress.env("API_URL")}/bio*`, {
+        cy.intercept("GET", `/api/events`, {
           fixture: "events/events-empty",
         }).as("getEvents");
 
@@ -56,7 +56,7 @@ describe("Bio page", () => {
       });
 
       it("shows the first 3 events", () => {
-        cy.intercept("GET", `${Cypress.env("API_URL")}/bio*`, {
+        cy.intercept("GET", `/api/events`, {
           fixture: "events/events-all",
         }).as("getEvents");
 
@@ -75,7 +75,7 @@ describe("Bio page", () => {
       });
 
       it("expands the events list", () => {
-        cy.intercept("GET", `${Cypress.env("API_URL")}/bio*`, {
+        cy.intercept("GET", `/api/events`, {
           fixture: "events/events-all",
         }).as("getEvents");
 
