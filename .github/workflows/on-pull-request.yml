@@ -1,5 +1,8 @@
 name: End-to-end tests
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - "frontend/**"
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
@@ -14,7 +17,7 @@ jobs:
         env:
           CYPRESS_API_URL: https://auem6y9ubd.execute-api.us-east-1.amazonaws.com/prod
           NEXT_PUBLIC_API_URL: "https://auem6y9ubd.execute-api.us-east-1.amazonaws.com/prod"
-          NEXT_PUBLIC_API_KEY: ''
+          NEXT_PUBLIC_API_KEY: ""
         with:
           command: npm run test:e2e:headless
           working-directory: frontend
