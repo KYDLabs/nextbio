@@ -13,8 +13,8 @@ jobs:
       - uses: cypress-io/github-action@v6
         env:
           CYPRESS_API_URL: https://auem6y9ubd.execute-api.us-east-1.amazonaws.com/prod
-          NEXT_PUBLIC_API_KEY: "<NEEDS TO BE ADDED VIA REPOSITORY > SECRETS>"
           NEXT_PUBLIC_API_URL: "https://auem6y9ubd.execute-api.us-east-1.amazonaws.com/prod"
+          NEXT_PUBLIC_API_KEY: ''
         with:
           command: npm run test:e2e:headless
           working-directory: frontend
