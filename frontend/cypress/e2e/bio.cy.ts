@@ -10,12 +10,12 @@ export const isMobile = () => {
 
 describe("Bio page", () => {
   sizes.forEach((size) => {
-    beforeEach(() => {
-      //@ts-ignore
-      cy.viewport(size);
-    });
-
     context(size, () => {
+      beforeEach(() => {
+        //@ts-ignore
+        cy.viewport(size);
+      });
+
       it("renders the artist header", () => {
         cy.visit("/bio");
 
